@@ -1,0 +1,99 @@
+{
+    "routine": {
+        "name": "Plantar Fasciitis",
+        "timeUnit": "seconds",
+        "setPrep": 5,
+        "exercises": [
+            {
+                "id": "arcStretch",
+                "label": "Plantar Arch Stretch",
+                "sets": 2,
+                "hold": 30,
+                "rest": 15,
+                "side": true,
+                "alternateSide": true,
+                "steps": [
+                    "Sit, cross ankle over knee",
+                    "Grab the base of the toes with same hand",
+                    "Pull it firmly back toward shin",
+                    "Hold stretch"
+                ]
+            },
+            {
+                "id": "toeSpreadCurl",
+                "label": "Toe Spread + Curl",
+                "sets": 1,
+                "reps": 5,
+                "hold": 5,
+                "rest": 3,
+                "side": false,
+                "alternateSide": false,
+                "steps": [
+                    "Spread toes wide, hold",
+                    "Curl toes inward, hold",
+                    "Relax briefly, repeat"
+                ]
+            },
+            {
+                "id": "toeDoodles",
+                "label": "Toe Drawing",
+                "sets": 1,
+                "hold": 60,
+                "rest": 0,
+                "side": false,
+                "alternateSide": false,
+                "steps": [
+                    "Lift foot",
+                    "Draw A–E with big toe in air",
+                    "Use ankle movement only",
+                    "Slow and controlled"
+                ]
+            },
+            {
+                "id": "shortFoot",
+                "label": "Short Foot Drill",
+                "sets": 2,
+                "reps": 5,
+                "hold": 5,
+                "rest": 5,
+                "side": false,
+                "alternateSide": false,
+                "steps": [
+                    "Stand barefoot",
+                    "Press ball of foot down, lift arch",
+                    "Lift arch without toe curl",
+                    "Hold and release"
+                ]
+            },
+            {
+                "id": "calfStretch",
+                "label": "Standing Calf Stretch",
+                "sets": 1,
+                "hold": 60,
+                "rest": 10,
+                "side": true,
+                "alternateSide": false,
+                "steps": [
+                    "Stand near wall",
+                    "Step back one leg",
+                    "Heel flat, knee straight",
+                    "Lean forward to stretch calf"
+                ]
+            },
+            {
+                "id": "archMassage",
+                "label": "Arch Massage",
+                "sets": 1,
+                "hold": 60,
+                "rest": 15,
+                "side": true,
+                "alternateSide": false,
+                "steps": [
+                    "Sit with foot on opposite leg",
+                    "Use thumbs to press arch",
+                    "Massage heel to ball slowly"
+                ]
+            }
+        ]
+    }
+}
