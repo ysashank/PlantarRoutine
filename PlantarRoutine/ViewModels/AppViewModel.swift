@@ -25,8 +25,8 @@ final class AppViewModel: ObservableObject {
     @Published var isRunning = false
     @Published var isPrepPhase = false
     @Published var isRestPhase = false
-    @Published var showSavedAlert = false
     @Published var showTimerView = false
+    @Published var didFinishRoutine = false
 
     // MARK: - Total Duration
     var totalDuration: Int {
@@ -125,7 +125,7 @@ final class AppViewModel: ObservableObject {
         HealthKitService.shared.logWorkout(duration: duration) { success in
             if success {
                 DispatchQueue.main.async {
-                    self.showSavedAlert = true
+                    self.didFinishRoutine = true
                 }
             }
         }

@@ -12,12 +12,31 @@ struct InstructionDetailView: View {
     let steps: [String]
 
     var body: some View {
-        NavigationView {
-            List(steps.indices, id: \.self) { i in
-                Text("\(i + 1). \(steps[i])")
+        ScrollView {
+            VStack(alignment: .leading, spacing: 0) {
+                ForEach(steps.indices, id: \.self) { i in
+                    HStack(alignment: .top, spacing: 8) {
+                        Text("\(i + 1).")
+                            .foregroundColor(.secondary)
+                        Text(steps[i])
+                            .foregroundColor(.primary)
+                    }
+                    .padding(.vertical, 12)
+                    .padding(.horizontal)
+
+                    if i < steps.count - 1 {
+                        Divider()
+                            .padding(.leading)
+                    }
+                }
             }
-            .navigationTitle(title)
-            .navigationBarTitleDisplayMode(.inline)
+            .padding(.top)
         }
+        .navigationTitle(title)
+        .navigationBarTitleDisplayMode(.inline)
     }
+}
+
+#Preview {
+    InstructionDetailView(title: "Preview", steps: ["String", "String", "String"])
 }
