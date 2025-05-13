@@ -80,9 +80,6 @@ struct Root: View {
                 FinishView(reset: { appState.reset() })
             }
         }
-        .onAppear {
-            HealthKitService.shared.requestPermission()
-        }
     }
 }
 

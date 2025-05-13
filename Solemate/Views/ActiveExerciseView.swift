@@ -157,10 +157,7 @@ struct ActiveExerciseView: View {
                 if index + 1 < routine.exercises.count {
                     nextPrep(routine, index + 1, .next)
                 } else {
-                    HealthKitService.shared.logWorkout(
-                        routine: routine,
-                        duration: TimeInterval(routine.totalDurationSeconds())
-                    ) { _ in }
+                    HealthManager.shared.logWorkout(routineName: routine.name)
                     nextComplete()
                 }
             }

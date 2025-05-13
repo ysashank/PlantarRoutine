@@ -9,6 +9,11 @@ import SwiftUI
 
 @main
 struct SolemateApp: App {
+    
+    init() {
+        HealthManager.shared.requestAuthorization()
+    }
+    
     var body: some Scene {
         WindowGroup {
             Root()
