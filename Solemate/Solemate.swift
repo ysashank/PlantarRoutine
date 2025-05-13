@@ -1,6 +1,6 @@
 //
-//  PlantarRoutineApp.swift
-//  PlantarRoutine
+//  SolemateApp.swift
+//  Solemate
 //
 //  Created by sashank.yalamanchili on 29.04.25.
 //
@@ -8,10 +8,10 @@
 import SwiftUI
 
 @main
-struct PlantarRoutineApp: App {
+struct SolemateApp: App {
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            Root()
         }
     }
 }

@@ -1,6 +1,6 @@
 //
 //  HealthKitService.swift
-//  PlantarRoutine
+//  Solemate
 //
 //  Created by sashank.yalamanchili on 29.04.25.
 //
@@ -23,7 +23,7 @@ class HealthKitService {
         }
     }
 
-    func logWorkout(duration: TimeInterval, completion: @escaping (Bool) -> Void) {
+    func logWorkout(routine: Routine, duration: TimeInterval, completion: @escaping (Bool) -> Void) {
         let startDate = Date()
         let endDate = startDate.addingTimeInterval(duration)
 
@@ -45,13 +45,21 @@ class HealthKitService {
                     completion(false)
                     return
                 }
+                
+                let metadata: [String: Any] = [
+                    HKMetadataKeyWorkoutBrandName: "Solemate",
+                    "com.solemate.routineName": routine.name,
+                    "com.solemate.exercises": routine.exercises.map {
+                        "\($0.label) (\($0.sets)x\($0.reps ?? 1) hold:\($0.hold)s side:\($0.alternateSide))"
+                    }.joined(separator: " | ")
+                ]
 
-                builder.finishWorkout { workout, error in
+                builder.finishWorkout(with: metadata) { workout, error in
                     if let error = error {
                         print("Workout finish failed: \(error.localizedDescription)")
                         completion(false)
                     } else {
-                        print("Workout saved to HealthKit! ✅")
+                        print("Workout saved to HealthKit with metadata!")
                         completion(true)
                     }
                 }
